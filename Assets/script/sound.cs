@@ -69,7 +69,7 @@ public class sound : MonoBehaviour
     private void OnAudioFilterRead(float[] data, int channels)
     {
 
-        //Debug.Log((frequency_touched));
+        //Debug.Log((frequency_touched + frequency_distance));
         double phaseIncrement = (frequency_touched + frequency_distance) / _sampleRate;
 
 
@@ -98,25 +98,21 @@ public class sound : MonoBehaviour
 
     public void setFrequency(float fr, string className)
     {
-        //Debug.Log(className);
-        if (string.Equals(className, "touched")) frequency_touched = fr;
+        if (string.Equals(className, "touched") || string.Equals(className, "touchedSuivi")) frequency_touched = fr;
         else if (string.Equals(className, "Distance")) frequency_distance = fr;
 
     }
 
     public void setToFrequenceBase(string className)
     {
-        //Debug.Log(className);
-        if (string.Equals(className, "touched")) frequency_touched = frequencybase;
+        if (string.Equals(className, "touched") || string.Equals(className, "touchedSuivi")) frequency_touched = frequencybase;
         else if (string.Equals(className, "Distance")) frequency_distance = frequencybase;
 
-        
     }
 
 
     public void UpFrerquency(double distance, string className)
     {
-
         if (!inverse)
             frequency = (float)(((distance - 0.8) / (6 - 0.8)) * (freq_max - freq_min)) + freq_min;
         else
@@ -125,15 +121,12 @@ public class sound : MonoBehaviour
         if (frequency > freq_max) frequency = freq_max;
         else if (frequency < freq_min) frequency = freq_min;
 
-        //Debug.Log(frequency);
 
-        if (string.Equals(className, "touched")) frequency_touched = frequency;
+        if (string.Equals(className, "touched") || string.Equals(className, "touchedSuivi")) frequency_touched = frequency;
         else if (string.Equals(className, "Distance"))
         {
-            //Debug.Log(frequency);
             frequency_distance = frequency;
         }
-        //Debug.Log("vibration en distaance : " + frequency);
 
     }
 
@@ -149,9 +142,7 @@ public class sound : MonoBehaviour
 
     public void setIntensity(float intensity, string className)
     {
-     
         amplitude = intensity;
-        //Debug.Log("SetIntensity : " + className);
     }
 
 }

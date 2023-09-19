@@ -73,7 +73,7 @@ public class DistanceSuivi : MonoBehaviour
     {
         if (Mode == 0)  
         {
-            Debug.Log(pointage.cube);
+            //Debug.Log(pointage.cube);
             if (distance > 0.1)
             {
                 pointage.toucher = false;

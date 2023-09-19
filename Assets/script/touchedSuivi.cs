@@ -220,8 +220,6 @@ public class touchedSuivi : MonoBehaviour
             
             if ((frequency_ / 7) * (pointage.cube) <= (vib_max / 7) * pointage.cube)
             {
-
-                //Debug.Log(vib_min + (pointage.cube) * (200/7));
                 s.setFrequency(vib_min + (pointage.cube) * (200 / 7), GetType().Name);
 
                 if (time >= 0.01)

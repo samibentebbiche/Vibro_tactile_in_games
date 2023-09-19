@@ -2,7 +2,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
 using Random = UnityEngine.Random;
 
 
@@ -10,7 +9,7 @@ public class PointageSuivi : MonoBehaviour
 {
     public int cube = 1;
 
-    private float time_spent = 0.0f;
+    //private float time_spent = 0.0f;
 
 
     public bool off;
@@ -36,8 +35,7 @@ public class PointageSuivi : MonoBehaviour
     void Update()
     {
         
-        time_spent += Time.deltaTime;
-        
+        //time_spent += Time.deltaTime;
         foreach (Transform eachChild in transform)
         {
             s = eachChild.GetComponent<sound>();

@@ -61,9 +61,9 @@ public class Suivre : MonoBehaviour
         {
             //if (s.mode == sound.Mode.Distance)
             //{
-                Debug.Log(other.name);
-                s.setToFrequenceBase(GetType().Name);
-                s.setIntensity((float)1, GetType().Name);
+                //Debug.Log(other.name);
+                //s.setToFrequenceBase(GetType().Name);
+                //s.setIntensity((float)1, GetType().Name);
             //}
 
 
