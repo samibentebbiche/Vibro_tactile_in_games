@@ -14,7 +14,7 @@ public class touched : MonoBehaviour
     Controller controller;
 
 
-    public enum Direction { Amplitude , Fréquence , Amplitude_Fréquence, Amplitude_Fréquence_continue, SoundOnEnterAndExit, SoundOnEnter, Audio };
+    public enum Direction { Amplitude , Fréquence , Amplitude_Fréquence, Amplitude_Fréquence_continue, SoundOnEnterAndExit, SoundOnEnter, Audio, dominos_effect };
     [SerializeField] public Direction Mode;
 
 
@@ -30,7 +30,7 @@ public class touched : MonoBehaviour
     private float time_on;
     private float time_off;
 
-
+    PointageSuivi pointage;
     #region Editor
 #if UNITY_EDITOR
     [CustomEditor(typeof(touched)), CanEditMultipleObjects]
@@ -43,7 +43,8 @@ public class touched : MonoBehaviour
             touched tou = (touched)target;
             
             Direction list = tou.Mode;
-            if (list == Direction.SoundOnEnter || list == Direction.SoundOnEnterAndExit) DrawFreq(tou);
+
+            if (list == Direction.SoundOnEnter || list == Direction.SoundOnEnterAndExit || list == Direction.dominos_effect) DrawFreq(tou);
 
             if (list == Direction.Audio) DrawAudio(tou);
 
@@ -118,10 +119,17 @@ public class touched : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        try
+        {
+            pointage = transform.parent.gameObject.GetComponent<PointageSuivi>();
+        }
+        catch (Exception e)
+        {
+            pointage = null;
+        }
         controller = new Controller();
         s = GetComponent<sound>();
-        //s = new sound();
+
         if(GetComponent<sound>() == null) s = gameObject.AddComponent<sound>();
         if (GetComponent<Rigidbody>() == null)
         {
@@ -137,7 +145,11 @@ public class touched : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if(pointage == null && Mode == Direction.dominos_effect)
+        {
+            Mode = Direction.Fréquence;
+            Debug.Log("Mode impossible");
+        }
         Frame frame = controller.Frame();
 
         // verify if there is no hands in the frame then set the frequency and intensity to 0
@@ -271,12 +283,42 @@ public class touched : MonoBehaviour
 
 
             }
-        }else if (enter)
+        }else if(Mode == Direction.dominos_effect)
+        {
+
+            time += Time.deltaTime;
+            Debug.Log(distance > distance_max);
+            if (distance > distance_max)
+            {
+                s.setIntensity((float)1, GetType().Name);
+            }
+            else
+            {
+
+                if ((frequency_ / 7) * (pointage.cube) <= (vib_max / 7) * pointage.cube)
+                {
+                    s.setFrequency(vib_min + (pointage.cube) * (200 / 7), GetType().Name);
+
+                    if (time >= 0.01)
+                    {
+                        frequency_ += (float)10;
+                        time = 0.0f;
+                    }
+                }
+                else
+                {
+                    pointage.cube += 1;
+                    s.setIntensity((float)0, GetType().Name);
+                    enter = false;
+                }
+            }
+        }
+        else if (enter)
         {
             time += Time.deltaTime;
             
             s.setIntensity((float)1, GetType().Name);
-            
+
             if (frequency_ <= vib_max)
             {
 
@@ -284,17 +326,18 @@ public class touched : MonoBehaviour
                 if (time >= 0.01)
                 {
                     frequency_ += (float)10;
-                    
+
                     time = 0.0f;
                 }
             }
             else
             {
-                
+
                 frequency_ = vib_min;
                 s.setIntensity((float)0, GetType().Name);
                 enter = false;
             }
+
 
         }
         else if (exit)

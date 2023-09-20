@@ -22,6 +22,11 @@ public class PointageSuivi : MonoBehaviour
     private GameObject tableau_vide;
     public bool toucher;
     // Start is called before the first frame update
+    public float vib_min = 200;
+    public float vib_max = 400;
+    public GameObject interaction;
+    private float frequency_;
+
 
 
     void Start()
@@ -29,6 +34,7 @@ public class PointageSuivi : MonoBehaviour
         off = false;
         toucher = false;
         cube = 1;
+        frequency_ = vib_min;
     }
 
     // Update is called once per frame
@@ -39,13 +45,16 @@ public class PointageSuivi : MonoBehaviour
         foreach (Transform eachChild in transform)
         {
             s = eachChild.GetComponent<sound>();
+
+
+
             if (toucher)
             {
-                time += Time.deltaTime;
 
                 if (cube == 8)
                 {
                     cube = 1;
+
                 }
             }
             else

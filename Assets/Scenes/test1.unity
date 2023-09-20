@@ -256,11 +256,11 @@ GameObject:
   - component: {fileID: 63934609}
   - component: {fileID: 63934608}
   - component: {fileID: 63934612}
-  - component: {fileID: 63934611}
   - component: {fileID: 63934616}
   - component: {fileID: 63934607}
   - component: {fileID: 63934614}
   - component: {fileID: 63934613}
+  - component: {fileID: 63934615}
   m_Layer: 0
   m_Name: 2
   m_TagString: Untagged
@@ -347,25 +347,6 @@ RectTransform:
   m_AnchoredPosition: {x: -0.29014, y: 0.06835}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &63934611
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 63934606}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1f63d6816cd72849a235e2799fdac01, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Mode: 5
-  _clip: {fileID: 8300000, guid: c659047c833b5b643ad9de2cd54da53a, type: 3}
-  vib_min: 200
-  vib_max: 400
-  cube: {fileID: 63934606}
-  interaction: {fileID: 161026489}
-  distance_max: 0
 --- !u!54 &63934612
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -493,6 +474,21 @@ MonoBehaviour:
   amplitudebase: 1
   frequencybase: 261.62
   inverse: 0
+--- !u!114 &63934615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 63934606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e95dc379060e41542b1c6344cf8ba926, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Mode: 7
+  interaction: {fileID: 161026489}
+  distance_max: 0
 --- !u!95 &63934616
 Animator:
   serializedVersion: 3
@@ -772,7 +768,7 @@ Transform:
   m_LocalScale: {x: 0.009486661, y: 0.030395387, z: 0.009486664}
   m_Children: []
   m_Father: {fileID: 4222071300727332}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: -23.146002, y: -4.7840004, z: -57.839005}
 --- !u!23 &161026491
 MeshRenderer:
@@ -1680,11 +1676,11 @@ GameObject:
   - component: {fileID: 586070759}
   - component: {fileID: 586070758}
   - component: {fileID: 586070757}
-  - component: {fileID: 586070756}
   - component: {fileID: 586070753}
   - component: {fileID: 586070752}
   - component: {fileID: 586070755}
   - component: {fileID: 586070754}
+  - component: {fileID: 586070756}
   m_Layer: 0
   m_Name: 1
   m_TagString: Untagged
@@ -1863,14 +1859,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 586070749}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1f63d6816cd72849a235e2799fdac01, type: 3}
+  m_Script: {fileID: 11500000, guid: e95dc379060e41542b1c6344cf8ba926, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Mode: 5
-  _clip: {fileID: 8300000, guid: c659047c833b5b643ad9de2cd54da53a, type: 3}
-  vib_min: 200
-  vib_max: 400
-  cube: {fileID: 586070749}
+  Mode: 7
   interaction: {fileID: 161026489}
   distance_max: 0
 --- !u!54 &586070757
@@ -2102,11 +2094,11 @@ GameObject:
   - component: {fileID: 753005066}
   - component: {fileID: 753005065}
   - component: {fileID: 753005064}
-  - component: {fileID: 753005063}
   - component: {fileID: 753005059}
   - component: {fileID: 753005058}
   - component: {fileID: 753005062}
   - component: {fileID: 753005060}
+  - component: {fileID: 753005063}
   m_Layer: 0
   m_Name: 5
   m_TagString: Untagged
@@ -2285,14 +2277,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 753005056}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1f63d6816cd72849a235e2799fdac01, type: 3}
+  m_Script: {fileID: 11500000, guid: e95dc379060e41542b1c6344cf8ba926, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Mode: 5
-  _clip: {fileID: 8300000, guid: c659047c833b5b643ad9de2cd54da53a, type: 3}
-  vib_min: 200
-  vib_max: 400
-  cube: {fileID: 753005056}
+  Mode: 7
   interaction: {fileID: 161026489}
   distance_max: 0
 --- !u!54 &753005064
@@ -3412,6 +3400,9 @@ MonoBehaviour:
   off: 0
   interpolationPeriod: 5
   toucher: 0
+  vib_min: 200
+  vib_max: 400
+  interaction: {fileID: 161026489}
 --- !u!1 &1078624514
 GameObject:
   m_ObjectHideFlags: 0
@@ -4645,11 +4636,11 @@ GameObject:
   - component: {fileID: 1491567984}
   - component: {fileID: 1491567983}
   - component: {fileID: 1491567982}
-  - component: {fileID: 1491567981}
   - component: {fileID: 1491567977}
   - component: {fileID: 1491567976}
   - component: {fileID: 1491567980}
   - component: {fileID: 1491567978}
+  - component: {fileID: 1491567981}
   m_Layer: 0
   m_Name: 7
   m_TagString: Untagged
@@ -4828,14 +4819,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1491567974}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1f63d6816cd72849a235e2799fdac01, type: 3}
+  m_Script: {fileID: 11500000, guid: e95dc379060e41542b1c6344cf8ba926, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Mode: 5
-  _clip: {fileID: 8300000, guid: c659047c833b5b643ad9de2cd54da53a, type: 3}
-  vib_min: 200
-  vib_max: 400
-  cube: {fileID: 1491567974}
+  Mode: 7
   interaction: {fileID: 161026489}
   distance_max: 0
 --- !u!54 &1491567982
@@ -5103,11 +5090,11 @@ GameObject:
   - component: {fileID: 1534301931}
   - component: {fileID: 1534301930}
   - component: {fileID: 1534301927}
-  - component: {fileID: 1534301928}
   - component: {fileID: 1534301933}
   - component: {fileID: 1534301929}
   - component: {fileID: 1534301926}
   - component: {fileID: 1534301925}
+  - component: {fileID: 1534301928}
   m_Layer: 0
   m_Name: 6
   m_TagString: Untagged
@@ -5251,14 +5238,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1534301923}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1f63d6816cd72849a235e2799fdac01, type: 3}
+  m_Script: {fileID: 11500000, guid: e95dc379060e41542b1c6344cf8ba926, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Mode: 5
-  _clip: {fileID: 8300000, guid: c659047c833b5b643ad9de2cd54da53a, type: 3}
-  vib_min: 200
-  vib_max: 400
-  cube: {fileID: 1534301923}
+  Mode: 7
   interaction: {fileID: 161026489}
   distance_max: 0
 --- !u!65 &1534301929
@@ -5506,11 +5489,11 @@ GameObject:
   - component: {fileID: 1594488625}
   - component: {fileID: 1594488624}
   - component: {fileID: 1594488623}
-  - component: {fileID: 1594488622}
   - component: {fileID: 1594488619}
   - component: {fileID: 1594488618}
   - component: {fileID: 1594488621}
   - component: {fileID: 1594488620}
+  - component: {fileID: 1594488622}
   m_Layer: 0
   m_Name: 3
   m_TagString: Untagged
@@ -5689,14 +5672,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1594488615}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1f63d6816cd72849a235e2799fdac01, type: 3}
+  m_Script: {fileID: 11500000, guid: e95dc379060e41542b1c6344cf8ba926, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Mode: 5
-  _clip: {fileID: 8300000, guid: c659047c833b5b643ad9de2cd54da53a, type: 3}
-  vib_min: 200
-  vib_max: 400
-  cube: {fileID: 1594488615}
+  Mode: 7
   interaction: {fileID: 161026489}
   distance_max: 0
 --- !u!54 &1594488623
@@ -6802,11 +6781,11 @@ GameObject:
   - component: {fileID: 1943921281}
   - component: {fileID: 1943921280}
   - component: {fileID: 1943921278}
-  - component: {fileID: 1943921279}
   - component: {fileID: 1943921274}
   - component: {fileID: 1943921273}
   - component: {fileID: 1943921277}
   - component: {fileID: 1943921276}
+  - component: {fileID: 1943921279}
   m_Layer: 0
   m_Name: 4
   m_TagString: Untagged
@@ -7001,14 +6980,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1943921271}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1f63d6816cd72849a235e2799fdac01, type: 3}
+  m_Script: {fileID: 11500000, guid: e95dc379060e41542b1c6344cf8ba926, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Mode: 5
-  _clip: {fileID: 8300000, guid: c659047c833b5b643ad9de2cd54da53a, type: 3}
-  vib_min: 200
-  vib_max: 400
-  cube: {fileID: 1943921271}
+  Mode: 7
   interaction: {fileID: 161026489}
   distance_max: 0
 --- !u!23 &1943921280
@@ -8958,8 +8933,8 @@ Transform:
   m_LocalPosition: {x: 0.022380017, y: 0.00000003544764, z: -0.000000021113623}
   m_LocalScale: {x: 1.0000008, y: 1, z: 1}
   m_Children:
-  - {fileID: 161026490}
   - {fileID: 4842266059008692}
+  - {fileID: 161026490}
   m_Father: {fileID: 4544795740959888}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -9533,7 +9508,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4222071300727332}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4845852167812404
 Transform:

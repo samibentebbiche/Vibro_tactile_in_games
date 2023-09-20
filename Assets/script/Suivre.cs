@@ -83,8 +83,8 @@ public class Suivre : MonoBehaviour
             
             //if (s.mode == sound.Mode.Distance)
             //{
-                s.setIntensity((float)0, GetType().Name);
-                s.setFrequency((float)0, GetType().Name);
+                //s.setIntensity((float)0, GetType().Name);
+                //s.setFrequency((float)0, GetType().Name);
             //}
 
 

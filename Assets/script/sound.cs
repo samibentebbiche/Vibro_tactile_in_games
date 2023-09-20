@@ -83,9 +83,7 @@ public class sound : MonoBehaviour
                 data[sample + channel] = value;
             }
         }
-
     }
-
 
     public void afficher()
     {
@@ -98,16 +96,16 @@ public class sound : MonoBehaviour
 
     public void setFrequency(float fr, string className)
     {
-        if (string.Equals(className, "touched") || string.Equals(className, "touchedSuivi")) frequency_touched = fr;
+        if (string.Equals(className, "touched") || string.Equals(className, "DominosEffect")) frequency_touched = fr;
         else if (string.Equals(className, "Distance")) frequency_distance = fr;
 
+        //Debug.Log(frequency_touched);
     }
 
     public void setToFrequenceBase(string className)
     {
-        if (string.Equals(className, "touched") || string.Equals(className, "touchedSuivi")) frequency_touched = frequencybase;
+        if (string.Equals(className, "touched") || string.Equals(className, "DominosEffect")) frequency_touched = frequencybase;
         else if (string.Equals(className, "Distance")) frequency_distance = frequencybase;
-
     }
 
 
@@ -122,7 +120,7 @@ public class sound : MonoBehaviour
         else if (frequency < freq_min) frequency = freq_min;
 
 
-        if (string.Equals(className, "touched") || string.Equals(className, "touchedSuivi")) frequency_touched = frequency;
+        if (string.Equals(className, "touched") || string.Equals(className, "DominosEffect")) frequency_touched = frequency;
         else if (string.Equals(className, "Distance"))
         {
             frequency_distance = frequency;
