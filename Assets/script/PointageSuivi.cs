@@ -57,7 +57,8 @@ public class PointageSuivi : MonoBehaviour
 
             if (toucher)
             {
-
+                //cube += 1;
+                //toucher = false;
                 if (cube == number_cube + 1)
                 {
                    frequency_ = vib_min;

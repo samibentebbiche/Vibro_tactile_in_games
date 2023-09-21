@@ -111,10 +111,10 @@ public class sound : MonoBehaviour
     }
 
 
-    public void UpFrerquency(double distance, string className)
+    public void UpFrerquency(double distance,float scale, string className)
     {
         if (!inverse)
-            frequency = (float)(((distance - 0.8) / (6 - 0.8)) * (freq_max - freq_min)) + freq_min;
+            frequency = (float)(((distance - scale) / (0 - scale)) * (freq_max - freq_min)) + freq_min;
         else
             frequency = (float)(((distance - 0.8) / (6 - 0.8)) * (freq_min - freq_max)) + freq_max;
 

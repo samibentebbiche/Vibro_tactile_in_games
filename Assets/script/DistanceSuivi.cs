@@ -78,7 +78,7 @@ public class DistanceSuivi : MonoBehaviour
             {
                 pointage.toucher = false;
                 s.setIntensity((float)1, GetType().Name);
-                s.UpFrerquency(distance, GetType().Name);
+                s.UpFrerquency(distance, 0, GetType().Name);
             }
             else
             {
@@ -107,7 +107,7 @@ public class DistanceSuivi : MonoBehaviour
             {
                 pointage.toucher = false;
                 s.setIntensity((float)1, GetType().Name);
-                s.UpFrerquency(distance, GetType().Name);
+                s.UpFrerquency(distance, 0, GetType().Name);
             }
             else
             {

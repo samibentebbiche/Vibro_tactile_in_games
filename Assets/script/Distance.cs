@@ -66,12 +66,24 @@ public class Distance : MonoBehaviour
 
     Rigidbody rb;
 
+
+    PointageSuivi pointage;
     // Start is called before the first frame update
     void Start()
     {
         controller = new Controller();
 
-        //s = gameObject.AddComponent<sound>();
+        try
+        {
+            pointage = transform.parent.gameObject.GetComponent<PointageSuivi>();
+        }
+        catch (Exception e)
+        {
+            pointage = null;
+        }
+
+        
+
         s = GetComponent<sound>();
         if (GetComponent<Rigidbody>() == null)
         {
@@ -103,10 +115,21 @@ public class Distance : MonoBehaviour
         s = GetComponent<sound>();
 
         // if the distance mode is activated 
+
+       
         if (s != null)
         {
-
-            if (SceneManager.GetActiveScene().name != "guidage 1") vibrer();
+      
+            if (pointage == null) vibrer();
+            else
+            {
+                Debug.Log(pointage.cube);
+                if (pointage.cube == int.Parse(this.name))
+                {
+                    
+                    vibrer();
+                }
+            }
 
             
         }
@@ -119,13 +142,20 @@ public class Distance : MonoBehaviour
         if (Mode == Direction.Frequency) 
         {
 
-            //Debug.Log(distance);
-            if (distance > 0.1)
+            if (distance > 0.05)
+            {
+                float scale = transform.parent.gameObject.transform.localScale.x;
+                s.setIntensity((float)1, GetType().Name);
+                s.UpFrerquency(distance, scale, GetType().Name);
+
+            }
+            else
             {
 
-                s.setIntensity((float)1, GetType().Name);
-                s.UpFrerquency(distance, GetType().Name);
-                
+                //if (pointage != null) {
+                //    pointage.toucher = true;
+                //    s.setFrequency(0, GetType().Name);
+                //}
             }
 
         }
