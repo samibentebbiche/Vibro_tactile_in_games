@@ -255,7 +255,6 @@ GameObject:
   - component: {fileID: 63934610}
   - component: {fileID: 63934609}
   - component: {fileID: 63934608}
-  - component: {fileID: 63934612}
   - component: {fileID: 63934616}
   - component: {fileID: 63934607}
   - component: {fileID: 63934614}
@@ -356,25 +355,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 63934606}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1f63d6816cd72849a235e2799fdac01, type: 3}
+  m_Script: {fileID: 11500000, guid: e95dc379060e41542b1c6344cf8ba926, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!54 &63934612
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 63934606}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
+  Mode: 0
+  interaction: {fileID: 1721786710385090}
+  distance_max: 0.05
 --- !u!82 &63934613
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1672,7 +1658,6 @@ GameObject:
   - component: {fileID: 586070750}
   - component: {fileID: 586070759}
   - component: {fileID: 586070758}
-  - component: {fileID: 586070757}
   - component: {fileID: 586070753}
   - component: {fileID: 586070752}
   - component: {fileID: 586070755}
@@ -1713,9 +1698,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 586070749}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1f63d6816cd72849a235e2799fdac01, type: 3}
+  m_Script: {fileID: 11500000, guid: e95dc379060e41542b1c6344cf8ba926, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Mode: 0
+  interaction: {fileID: 1721786710385090}
+  distance_max: 0.05
 --- !u!65 &586070752
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1859,22 +1847,6 @@ MonoBehaviour:
   amplitudebase: 1
   frequencybase: 261.62
   inverse: 0
---- !u!54 &586070757
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 586070749}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!23 &586070758
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2087,7 +2059,6 @@ GameObject:
   - component: {fileID: 753005057}
   - component: {fileID: 753005066}
   - component: {fileID: 753005065}
-  - component: {fileID: 753005064}
   - component: {fileID: 753005059}
   - component: {fileID: 753005058}
   - component: {fileID: 753005062}
@@ -2256,9 +2227,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 753005056}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1f63d6816cd72849a235e2799fdac01, type: 3}
+  m_Script: {fileID: 11500000, guid: e95dc379060e41542b1c6344cf8ba926, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Mode: 0
+  interaction: {fileID: 1721786710385090}
+  distance_max: 0.05
 --- !u!114 &753005062
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2274,22 +2248,6 @@ MonoBehaviour:
   amplitudebase: 1
   frequencybase: 261.62
   inverse: 0
---- !u!54 &753005064
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 753005056}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!23 &753005065
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3388,13 +3346,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cube: 0
+  number_cube: 0
   off: 0
   interpolationPeriod: 5
   toucher: 0
   vib_min: 200
   vib_max: 400
-  interaction: {fileID: 161026489}
+  interaction: {fileID: 1721786710385090}
   frequency_: 0
+  succecive: 0
 --- !u!1 &1078624514
 GameObject:
   m_ObjectHideFlags: 0
@@ -4627,7 +4587,6 @@ GameObject:
   - component: {fileID: 1491567975}
   - component: {fileID: 1491567984}
   - component: {fileID: 1491567983}
-  - component: {fileID: 1491567982}
   - component: {fileID: 1491567977}
   - component: {fileID: 1491567976}
   - component: {fileID: 1491567980}
@@ -4796,9 +4755,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1491567974}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1f63d6816cd72849a235e2799fdac01, type: 3}
+  m_Script: {fileID: 11500000, guid: e95dc379060e41542b1c6344cf8ba926, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Mode: 0
+  interaction: {fileID: 1721786710385090}
+  distance_max: 0.05
 --- !u!114 &1491567980
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4814,22 +4776,6 @@ MonoBehaviour:
   amplitudebase: 1
   frequencybase: 261.62
   inverse: 0
---- !u!54 &1491567982
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1491567974}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!23 &1491567983
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5078,7 +5024,6 @@ GameObject:
   - component: {fileID: 1534301932}
   - component: {fileID: 1534301931}
   - component: {fileID: 1534301930}
-  - component: {fileID: 1534301927}
   - component: {fileID: 1534301933}
   - component: {fileID: 1534301929}
   - component: {fileID: 1534301926}
@@ -5100,9 +5045,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1534301923}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1f63d6816cd72849a235e2799fdac01, type: 3}
+  m_Script: {fileID: 11500000, guid: e95dc379060e41542b1c6344cf8ba926, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Mode: 0
+  interaction: {fileID: 1721786710385090}
+  distance_max: 0.05
 --- !u!82 &1534301925
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5214,22 +5162,6 @@ MonoBehaviour:
   amplitudebase: 1
   frequencybase: 261.62
   inverse: 0
---- !u!54 &1534301927
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1534301923}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!65 &1534301929
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5474,7 +5406,6 @@ GameObject:
   - component: {fileID: 1594488616}
   - component: {fileID: 1594488625}
   - component: {fileID: 1594488624}
-  - component: {fileID: 1594488623}
   - component: {fileID: 1594488619}
   - component: {fileID: 1594488618}
   - component: {fileID: 1594488621}
@@ -5515,9 +5446,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1594488615}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1f63d6816cd72849a235e2799fdac01, type: 3}
+  m_Script: {fileID: 11500000, guid: e95dc379060e41542b1c6344cf8ba926, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Mode: 0
+  interaction: {fileID: 1721786710385090}
+  distance_max: 0.05
 --- !u!65 &1594488618
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5661,22 +5595,6 @@ MonoBehaviour:
   amplitudebase: 1
   frequencybase: 261.62
   inverse: 0
---- !u!54 &1594488623
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1594488615}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!23 &1594488624
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6763,7 +6681,6 @@ GameObject:
   - component: {fileID: 1943921272}
   - component: {fileID: 1943921281}
   - component: {fileID: 1943921280}
-  - component: {fileID: 1943921278}
   - component: {fileID: 1943921274}
   - component: {fileID: 1943921273}
   - component: {fileID: 1943921277}
@@ -6836,9 +6753,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1943921271}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1f63d6816cd72849a235e2799fdac01, type: 3}
+  m_Script: {fileID: 11500000, guid: e95dc379060e41542b1c6344cf8ba926, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Mode: 0
+  interaction: {fileID: 1721786710385090}
+  distance_max: 0.05
 --- !u!82 &1943921276
 AudioSource:
   m_ObjectHideFlags: 0
@@ -6950,22 +6870,6 @@ MonoBehaviour:
   amplitudebase: 1
   frequencybase: 261.62
   inverse: 0
---- !u!54 &1943921278
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1943921271}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!23 &1943921280
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8549,6 +8453,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4842266059008692}
   - component: {fileID: 126115158}
+  - component: {fileID: 1721786710385091}
   m_Layer: 0
   m_Name: R_index_end
   m_TagString: index
@@ -8556,6 +8461,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!54 &1721786710385091
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1721786710385090}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1726938631811092
 GameObject:
   m_ObjectHideFlags: 0

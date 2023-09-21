@@ -243,7 +243,6 @@ public class touched : MonoBehaviour
             }
             else
             {
-                Debug.Log("touch");
                 s.setToFrequenceBase(GetType().Name);
                 s.setIntensity((float)1, GetType().Name);
             }
@@ -393,8 +392,6 @@ public class touched : MonoBehaviour
         {
             if(interaction.name == other.name )
             {
-                Debug.Log(other);
-
                 exit = false;
                 if (!enter)
                 {

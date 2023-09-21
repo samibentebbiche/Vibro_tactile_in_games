@@ -134,10 +134,12 @@ public class DominosEffect : MonoBehaviour
 
         if (other.name[0] != 't')
         {
-            
 
+            Debug.Log(other.name +" == "+ pointage.interaction.name);
             if (other.name == pointage.interaction.name)
             {
+
+                Debug.Log("aaa");
                 if (!pointage.succecive) pointage.cube = int.Parse(this.name);
                 
                 if (pointage.cube.ToString().Equals(this.name))
