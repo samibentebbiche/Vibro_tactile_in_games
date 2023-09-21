@@ -26,8 +26,6 @@ public class DominosEffect : MonoBehaviour
     sound s;
     PointageSuivi pointage;
 
-    
-    float distance;
 
     private float time = 0.0f;
     private float interpolationPeriod = 0.2f;
@@ -35,6 +33,10 @@ public class DominosEffect : MonoBehaviour
     private bool enter  = false;
     private float vib_min;
     private float vib_max;
+
+    //public float vib = 200.0f;
+
+    
 
     // Start is called before the first frame update
     void Start()
@@ -50,6 +52,8 @@ public class DominosEffect : MonoBehaviour
         vib_max = pointage.vib_max;
 
         frequency_ = vib_min;
+
+        
     }
 
     // Update is called once per frame
@@ -65,19 +69,17 @@ public class DominosEffect : MonoBehaviour
             s.setIntensity((float)0, GetType().Name);
             pointage.toucher = false;
         }
-        // calculate the distance between the cube and the tip of the hands
-        distance = Vector3.Distance(this.transform.position, pointage.interaction.transform.position);
+
 
 
         // if the distance mode is activated
         if (s != null )
         {
-
             // look wich cube is suposed to vibrate and vibrate this cube if this one is suposed to vibrate
             if (pointage.cube.ToString() == this.name)
             {
                 //Debug.Log(pointage.cube.ToString() + "  '  " + this.name);
-
+                
                 vibrer();
             }
             else
@@ -85,6 +87,7 @@ public class DominosEffect : MonoBehaviour
                 // if this cube is note supposed to vibrate we set frequency and intensity to 0
                 s.setFrequency((float)0, GetType().Name);
                 s.setIntensity((float)0, GetType().Name);
+                enter = false;
             }
         }
     }
@@ -94,27 +97,32 @@ public class DominosEffect : MonoBehaviour
 
         if (enter)
         {
-            
-            pointage.toucher = true;
 
+            
             time += Time.deltaTime;
             s.setIntensity((float)1, GetType().Name);
-
-            if ((frequency_ / 7) * (pointage.cube) <= (vib_max / 7) * pointage.cube)
+            
+            if (time < 0.4)
             {
-                
-                s.setFrequency(vib_min + (pointage.cube) * (200 / 7), GetType().Name);
 
-                if (time >= 0.01)
+                Debug.Log(pointage.cube);
+                s.setFrequency(vib_min + (pointage.cube) * ((vib_max- vib_min) / pointage.number_cube), GetType().Name);
+
+                //s.setFrequency(vib, GetType().Name);
+
+                if (time >= 0.01 * pointage.cube)
                 {
                     frequency_ += (float)10;
-                    time = 0.0f;
+                    
                 }
             }
             else
             {
-                pointage.cube += 1;
+                time = 0.0f;
+                if(pointage.succecive) pointage.cube += 1;
                 s.setIntensity((float)0, GetType().Name);
+                enter = false;
+                pointage.toucher = false;
 
             }
 
@@ -123,16 +131,22 @@ public class DominosEffect : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
 
+
         if (other.name[0] != 't')
         {
+            
 
-
+            if (other.name == pointage.interaction.name)
+            {
+                if (!pointage.succecive) pointage.cube = int.Parse(this.name);
+                
                 if (pointage.cube.ToString().Equals(this.name))
                 {
                     
                     if (!enter)
                     {
-                        frequency_ = vib_min;
+                        //Debug.Log(this.name);
+                        pointage.frequency_ = vib_min;
 
                         enter = true;
 
@@ -142,8 +156,10 @@ public class DominosEffect : MonoBehaviour
                     pointage.toucher = true;
                 }
 
+            }
+
         }
 
-    }    
+    }
 
 }

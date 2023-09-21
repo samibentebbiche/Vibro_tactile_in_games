@@ -131,11 +131,11 @@ public class touched : MonoBehaviour
         s = GetComponent<sound>();
 
         if(GetComponent<sound>() == null) s = gameObject.AddComponent<sound>();
-        if (GetComponent<Rigidbody>() == null)
-        {
-            rb = gameObject.AddComponent<Rigidbody>();
-            rb.useGravity = false;
-        }
+        //if (GetComponent<Rigidbody>() == null)
+        //{
+        //    rb = gameObject.AddComponent<Rigidbody>();
+        //    rb.useGravity = false;
+        //}
         frequency_ = vib_min;
         _audio = GetComponent<AudioSource>();
         time_on = 0.2f;
@@ -180,7 +180,6 @@ public class touched : MonoBehaviour
 
     void vibrer()
     {
-        
 
         if (Mode == Direction.Amplitude) // Changement d'amplitude
         {
@@ -244,7 +243,7 @@ public class touched : MonoBehaviour
             }
             else
             {
-
+                Debug.Log("touch");
                 s.setToFrequenceBase(GetType().Name);
                 s.setIntensity((float)1, GetType().Name);
             }
@@ -392,6 +391,9 @@ public class touched : MonoBehaviour
 
         if (Mode == Direction.SoundOnEnterAndExit || Mode == Direction.SoundOnEnter)
         {
+            if(interaction.name == other.name )
+            {
+                Debug.Log(other);
 
                 exit = false;
                 if (!enter)
@@ -399,18 +401,25 @@ public class touched : MonoBehaviour
                     frequency_ = vib_min;
                     enter = true;
                 }
+            }
+            
                 
         }
     }
 
-    void OnTriggerExit()
+    void OnTriggerExit(Collider other)
     {
         if (Mode == Direction.SoundOnEnterAndExit)
         {
+            if (interaction.name == other.name)
+            {
 
                 frequency_ = vib_max;
                 enter = false;
                 exit = true;
+
+
+            }
         }
     }
 }

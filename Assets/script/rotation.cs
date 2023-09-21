@@ -16,9 +16,6 @@ public class rotation : MonoBehaviour
 
     public HealthBar healthBar;
 
-    public enum Direction { OnChangingRoad, OnToucheTarget };
-    [SerializeField]
-    public Direction Mode;
 
     public float min_vib = 200;
 
@@ -66,67 +63,49 @@ public class rotation : MonoBehaviour
                 frame = controller.Frame();
                 hand = frame.Hands[0];
 
-
-            if (Mode == Direction.OnChangingRoad)
-            {
                 //Debug.Log(hand.Rotation.z);
 
                 car.transform.position = new Vector3((hand.Rotation.z * -2), car.transform.position.y, car.transform.position.z);
-                if ((hand.Rotation.z > ((float)1 / numberRoad) * 3) && (hand.Rotation.z < ((float)1 / numberRoad) * 4))
-                {
 
-                    //Debug.Log(" road 4");
-                    s.setIntensity((float)1, GetType().Name);
-                    s.setFrequency(min_vib + ((max_vib - min_vib) / numberRoad) * 0, GetType().Name);
+                //if ((hand.Rotation.z > ((float)1 / numberRoad) * 3) && (hand.Rotation.z < ((float)1 / numberRoad) * 4))
+                //{
 
-                    //Debug.Log(min_vib + ((max_vib - min_vib) / numberRoad) * 0);
+                //    //Debug.Log(" road 4");
+                //    s.setIntensity((float)1, GetType().Name);
+                //    s.setFrequency(min_vib + ((max_vib - min_vib) / numberRoad) * 0, GetType().Name);
 
-                }
-                else if ((hand.Rotation.z > ((float)1 / numberRoad) * 2) && (hand.Rotation.z < ((float)1 / numberRoad) * 3))
-                {
-                    //Debug.Log(" road 3");
-                    s.setIntensity((float)1, GetType().Name);
-                    s.setFrequency(min_vib + ((max_vib - min_vib) / numberRoad) * 1, GetType().Name);
-                    //Debug.Log(min_vib + ((max_vib - min_vib) / numberRoad) * 1);
-                }
-                else if ((hand.Rotation.z > ((float)1 / numberRoad) * 1) && (hand.Rotation.z < ((float)1 / numberRoad) * 2))
-                {
-                    //Debug.Log(" road 2");
-                    s.setIntensity((float)1, GetType().Name);
-                    s.setFrequency(min_vib + ((max_vib - min_vib) / numberRoad) * 2, GetType().Name);
-                    //Debug.Log(min_vib + ((max_vib - min_vib) / numberRoad) * 2);
+                //    //Debug.Log(min_vib + ((max_vib - min_vib) / numberRoad) * 0);
 
-                }
-                else if ((hand.Rotation.z > 0) && (hand.Rotation.z < ((float)1 / numberRoad)))
-                {
-                    //Debug.Log(" road 1");
-                    s.setIntensity((float)1, GetType().Name);
-                    s.setFrequency(min_vib + ((max_vib - min_vib) / numberRoad) * 3, GetType().Name);
-                    //Debug.Log(min_vib + ((max_vib - min_vib) / numberRoad) * 3);
-                }
-                else
-                {
-                    s.setFrequency((float)0, GetType().Name);
-                    s.setIntensity((float)0, GetType().Name);
-                }
+                //}
+                //else if ((hand.Rotation.z > ((float)1 / numberRoad) * 2) && (hand.Rotation.z < ((float)1 / numberRoad) * 3))
+                //{
+                //    //Debug.Log(" road 3");
+                //    s.setIntensity((float)1, GetType().Name);
+                //    s.setFrequency(min_vib + ((max_vib - min_vib) / numberRoad) * 1, GetType().Name);
+                //    //Debug.Log(min_vib + ((max_vib - min_vib) / numberRoad) * 1);
+                //}
+                //else if ((hand.Rotation.z > ((float)1 / numberRoad) * 1) && (hand.Rotation.z < ((float)1 / numberRoad) * 2))
+                //{
+                //    //Debug.Log(" road 2");
+                //    s.setIntensity((float)1, GetType().Name);
+                //    s.setFrequency(min_vib + ((max_vib - min_vib) / numberRoad) * 2, GetType().Name);
+                //    //Debug.Log(min_vib + ((max_vib - min_vib) / numberRoad) * 2);
 
-            }
-            else if(Mode == Direction.OnToucheTarget)
-            { 
-                
-                car.transform.position = new Vector3((hand.Rotation.z * -2), car.transform.position.y, car.transform.position.z);
-                
-                if (touch_canister)
-                {
-                    s.setIntensity((float)1, GetType().Name);
-                    s.setFrequency((float)200, GetType().Name);
-                }
-                else
-                {
-                    s.setFrequency((float)0, GetType().Name);
-                    s.setIntensity((float)0, GetType().Name);
-                }
-            }
+                //}
+                //else if ((hand.Rotation.z > 0) && (hand.Rotation.z < ((float)1 / numberRoad)))
+                //{
+                //    //Debug.Log(" road 1");
+                //    s.setIntensity((float)1, GetType().Name);
+                //    s.setFrequency(min_vib + ((max_vib - min_vib) / numberRoad) * 3, GetType().Name);
+                //    //Debug.Log(min_vib + ((max_vib - min_vib) / numberRoad) * 3);
+                //}
+                //else
+                //{
+                //    s.setFrequency((float)0, GetType().Name);
+                //    s.setIntensity((float)0, GetType().Name);
+                //}
+
+
 
 
         }
@@ -142,9 +121,14 @@ public class rotation : MonoBehaviour
 
     void OnTriggerExit(Collider other)
     {
-        touch_canister = false;
-        Destroy(other.gameObject);
-        if(currentHealth < healthBar.slider.maxValue)currentHealth += 5;
-        healthBar.SetHealth(currentHealth);
+        
+        if (other.name[0] == 'C')
+        {
+            touch_canister = false;
+            Destroy(other.gameObject);
+            if (currentHealth < healthBar.slider.maxValue) currentHealth += 5;
+            healthBar.SetHealth(currentHealth);
+        }
+
     }
 }

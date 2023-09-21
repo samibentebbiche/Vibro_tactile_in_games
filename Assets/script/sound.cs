@@ -96,10 +96,12 @@ public class sound : MonoBehaviour
 
     public void setFrequency(float fr, string className)
     {
-        if (string.Equals(className, "touched") || string.Equals(className, "DominosEffect")) frequency_touched = fr;
-        else if (string.Equals(className, "Distance")) frequency_distance = fr;
 
-        //Debug.Log(frequency_touched);
+        if (string.Equals(className, "touched") || string.Equals(className, "DominosEffect")) frequency_touched = fr;
+        else if (string.Equals(className, "Distance") || string.Equals(className, "rotation")) frequency_distance = fr;
+        
+
+
     }
 
     public void setToFrequenceBase(string className)
