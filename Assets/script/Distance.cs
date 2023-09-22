@@ -59,7 +59,7 @@ public class Distance : MonoBehaviour
 #endif
     #endregion
 
-    private GameObject interaction;
+    public GameObject interaction;
 
     // Distance between two object
     private float distance;
@@ -78,7 +78,6 @@ public class Distance : MonoBehaviour
         try
         {
             pointage = transform.parent.gameObject.GetComponent<PointageSuivi>();
-            interaction = pointage.interaction;
         }
         catch (Exception e)
         {
