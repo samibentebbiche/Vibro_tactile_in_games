@@ -59,7 +59,7 @@ public class Distance : MonoBehaviour
 #endif
     #endregion
 
-    public GameObject interaction;
+    private GameObject interaction;
 
     // Distance between two object
     private float distance;
@@ -68,6 +68,8 @@ public class Distance : MonoBehaviour
 
 
     PointageSuivi pointage;
+
+    private float scale;
     // Start is called before the first frame update
     void Start()
     {
@@ -76,15 +78,29 @@ public class Distance : MonoBehaviour
         try
         {
             pointage = transform.parent.gameObject.GetComponent<PointageSuivi>();
+            interaction = pointage.interaction;
         }
         catch (Exception e)
         {
             pointage = null;
+            
         }
 
-        
 
-        s = GetComponent<sound>();
+        s = transform.parent.gameObject.GetComponent<sound>();
+        if (s == null)
+        {
+            try
+            {
+                s = GetComponent<sound>();
+            }
+            catch
+            {
+                Debug.Log("Sound dont't exist !");
+            }
+        }
+        if (s == null) s = gameObject.AddComponent<sound>();
+
         if (GetComponent<Rigidbody>() == null)
         {
             rb = gameObject.AddComponent<Rigidbody>();
@@ -98,7 +114,7 @@ public class Distance : MonoBehaviour
     {
         Frame frame = controller.Frame();
 
-
+        scale = transform.parent.gameObject.transform.localScale.x;
         // verify if there is no hands in the frame then set the frequency and intensity to 0
         if (controller.IsConnected == true)
         {
@@ -119,14 +135,16 @@ public class Distance : MonoBehaviour
        
         if (s != null)
         {
-      
-            if (pointage == null) vibrer();
+
+            if (pointage == null)
+            {
+                vibrer();
+            }
             else
             {
                 Debug.Log(pointage.cube);
                 if (pointage.cube == int.Parse(this.name))
                 {
-                    
                     vibrer();
                 }
             }
@@ -144,26 +162,19 @@ public class Distance : MonoBehaviour
 
             if (distance > 0.05)
             {
-                float scale = transform.parent.gameObject.transform.localScale.x;
+                
                 s.setIntensity((float)1, GetType().Name);
                 s.UpFrerquency(distance, scale, GetType().Name);
 
             }
-            else
-            {
-
-                //if (pointage != null) {
-                //    pointage.toucher = true;
-                //    s.setFrequency(0, GetType().Name);
-                //}
-            }
+            
 
         }
         else if (Mode == Direction.Intensity)
         {
             if (distance > 0.1)
             {
-                s.UpIntensity(distance, GetType().Name);
+                s.UpIntensity(distance, scale, GetType().Name);
                 s.setToFrequenceBase(GetType().Name);
             }
 

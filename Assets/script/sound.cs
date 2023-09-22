@@ -116,7 +116,7 @@ public class sound : MonoBehaviour
         if (!inverse)
             frequency = (float)(((distance - scale) / (0 - scale)) * (freq_max - freq_min)) + freq_min;
         else
-            frequency = (float)(((distance - 0.8) / (6 - 0.8)) * (freq_min - freq_max)) + freq_max;
+            frequency = (float)(((distance - scale) / (0 - scale)) * (freq_min - freq_max)) + freq_max;
 
         if (frequency > freq_max) frequency = freq_max;
         else if (frequency < freq_min) frequency = freq_min;
@@ -130,13 +130,13 @@ public class sound : MonoBehaviour
 
     }
 
-    public void UpIntensity(float distance, string className)
+    public void UpIntensity(float distance,float scale, string className)
     {
         //amplitude = amplitudebase / distance;
         if (!inverse)
-            amplitude = (float)((((distance - 0.8) / (6 - 0.8)) * (0.2 - 0.8)) + 0.8);
+            amplitude = (float)((((distance - scale) / (0 - scale)) * (0 - 1.0)) + 1.0);
         else
-            amplitude = (float)((((distance - 0.8) / (6 - 0.8)) * (0.8 - 0.2)) + 0.2);
+            amplitude = (float)((((distance - scale) / (0 - scale)) * (1.0 - 0)) + 0);
     }
 
 

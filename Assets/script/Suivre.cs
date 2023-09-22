@@ -18,7 +18,20 @@ public class Suivre : MonoBehaviour
     {
         controller = new Controller();
 
+        
         s = transform.parent.gameObject.GetComponent<sound>();
+        if(s == null )
+        {
+            try
+            {
+                s = GetComponent<sound>();
+            }
+            catch
+            {
+                Debug.Log("Sound dont't exist !");
+            }
+        }
+        if (s == null) s = gameObject.AddComponent<sound>();
 
         pointage = GameObject.Find("Objects").GetComponent<PointageSuivi>();
 
@@ -36,22 +49,7 @@ public class Suivre : MonoBehaviour
             s.setFrequency((float)0, GetType().Name);
             s.setIntensity((float)0, GetType().Name);
         }
-        //Debug.Log(this.name);
-        //Debug.Log(pointage.cube);
-        if (pointage.cube == 0)
-        {
-            // TODO
-            //distance = Vector3.Distance(.transform.position, indexTip.transform.position);
 
-        }
-        else if(pointage.cube == 1)
-        {
-            // TODO
-        }
-        else
-        {
-            // TODO
-        }
     }
 
     void OnTriggerEnter(Collider other)
@@ -59,13 +57,6 @@ public class Suivre : MonoBehaviour
 
         if(other.gameObject.name == "R_index_end")
         {
-            //if (s.mode == sound.Mode.Distance)
-            //{
-                //Debug.Log(other.name);
-                //s.setToFrequenceBase(GetType().Name);
-                //s.setIntensity((float)1, GetType().Name);
-            //}
-
 
 
             renderer.material.SetColor("_Color", customColor);
@@ -78,14 +69,6 @@ public class Suivre : MonoBehaviour
 
         if (other.gameObject.name == "R_index_end")
         {
-
-
-            
-            //if (s.mode == sound.Mode.Distance)
-            //{
-                //s.setIntensity((float)0, GetType().Name);
-                //s.setFrequency((float)0, GetType().Name);
-            //}
 
 
             renderer.material.SetColor("_Color", Color.white);

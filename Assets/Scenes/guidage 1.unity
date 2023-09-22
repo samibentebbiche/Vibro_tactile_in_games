@@ -132,7 +132,6 @@ GameObject:
   - component: {fileID: 27968116}
   - component: {fileID: 27968115}
   - component: {fileID: 27968114}
-  - component: {fileID: 27968113}
   m_Layer: 0
   m_Name: Objects
   m_TagString: Untagged
@@ -140,28 +139,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &27968113
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 27968112}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e48bafda98c25a42be28063136b583b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cube: 1
-  number_cube: 0
-  off: 0
-  interpolationPeriod: 5
-  toucher: 0
-  vib_min: 200
-  vib_max: 400
-  interaction: {fileID: 1721786710385090}
-  frequency_: 0
-  succecive: 0
 --- !u!23 &27968114
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -460,7 +437,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 63934606}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e95dc379060e41542b1c6344cf8ba926, type: 3}
   m_Name: 
@@ -602,7 +579,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 63934606}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ed8e4e552a0184a4ebaa3681376a1c83, type: 3}
   m_Name: 
@@ -610,7 +587,6 @@ MonoBehaviour:
   Mode: 0
   frequence_min: 100
   frequence_max: 400
-  interaction: {fileID: 1721786710385090}
 --- !u!95 &63934616
 Animator:
   serializedVersion: 3
@@ -3760,7 +3736,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1534301923}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ed8e4e552a0184a4ebaa3681376a1c83, type: 3}
   m_Name: 
@@ -3768,7 +3744,6 @@ MonoBehaviour:
   Mode: 0
   frequence_min: 100
   frequence_max: 400
-  interaction: {fileID: 1721786710385090}
 --- !u!82 &1534301925
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3903,7 +3878,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1534301923}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e95dc379060e41542b1c6344cf8ba926, type: 3}
   m_Name: 
@@ -5162,7 +5137,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1943921271}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ed8e4e552a0184a4ebaa3681376a1c83, type: 3}
   m_Name: 
@@ -5170,7 +5145,6 @@ MonoBehaviour:
   Mode: 0
   frequence_min: 100
   frequence_max: 400
-  interaction: {fileID: 1721786710385090}
 --- !u!82 &1943921276
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5377,7 +5351,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1943921271}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e95dc379060e41542b1c6344cf8ba926, type: 3}
   m_Name: 

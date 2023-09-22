@@ -18,10 +18,6 @@ public class PointageSuivi : MonoBehaviour
     private float time = 0.0f;
     [HideInInspector]
     public float interpolationPeriod = 5.0f;
-
-    sound s;
-    private GameObject tableau;
-    private GameObject tableau_vide;
     [HideInInspector]
     public bool toucher;
     // Start is called before the first frame update
@@ -51,8 +47,6 @@ public class PointageSuivi : MonoBehaviour
         //time_spent += Time.deltaTime;
         foreach (Transform eachChild in transform)
         {
-            s = eachChild.GetComponent<sound>();
-
 
 
             if (toucher)

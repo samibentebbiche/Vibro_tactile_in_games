@@ -44,8 +44,20 @@ public class DominosEffect : MonoBehaviour
         
         
         controller = new Controller();
-        s = GetComponent<sound>();
-  
+        s = transform.parent.gameObject.GetComponent<sound>();
+        if (s == null)
+        {
+            try
+            {
+                s = GetComponent<sound>();
+            }
+            catch
+            {
+                Debug.Log("Sound dont't exist !");
+            }
+        }
+        if (s == null) s = gameObject.AddComponent<sound>();
+
         pointage = transform.parent.gameObject.GetComponent<PointageSuivi>();
 
         vib_min = pointage.vib_min;
@@ -135,11 +147,11 @@ public class DominosEffect : MonoBehaviour
         if (other.name[0] != 't')
         {
 
-            Debug.Log(other.name +" == "+ pointage.interaction.name);
+            
             if (other.name == pointage.interaction.name)
             {
 
-                Debug.Log("aaa");
+                
                 if (!pointage.succecive) pointage.cube = int.Parse(this.name);
                 
                 if (pointage.cube.ToString().Equals(this.name))

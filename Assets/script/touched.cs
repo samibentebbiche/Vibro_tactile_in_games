@@ -125,12 +125,24 @@ public class touched : MonoBehaviour
         }
         catch (Exception e)
         {
+
             pointage = null;
         }
         controller = new Controller();
-        s = GetComponent<sound>();
+        s = transform.parent.gameObject.GetComponent<sound>();
+        if (s == null)
+        {
+            try
+            {
+                s = GetComponent<sound>();
+            }
+            catch
+            {
+                Debug.Log("Sound dont't exist !");
+            }
+        }
 
-        if(GetComponent<sound>() == null) s = gameObject.AddComponent<sound>();
+        if (s == null) s = gameObject.AddComponent<sound>();
         //if (GetComponent<Rigidbody>() == null)
         //{
         //    rb = gameObject.AddComponent<Rigidbody>();

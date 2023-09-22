@@ -130,7 +130,7 @@ public class DistanceSuivi : MonoBehaviour
             if (distance > 0.1)
             {
                 pointage.toucher = false;
-                s.UpIntensity(distance * 10, GetType().Name);
+                s.UpIntensity(distance * 10, 0, GetType().Name);
                 s.setToFrequenceBase(GetType().Name);
             }
             else
