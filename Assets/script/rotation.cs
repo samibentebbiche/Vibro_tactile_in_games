@@ -28,7 +28,7 @@ public class rotation : MonoBehaviour
     private float interpolationPeriod = 0.2f;
     private int i;
 
-    Frame frame;
+    Frame frame = null;
     Hand hand;
     // Start is called before the first frame update
     void Start()
@@ -60,52 +60,22 @@ public class rotation : MonoBehaviour
         if (s != null)
         {
 
-                frame = controller.Frame();
-                hand = frame.Hands[0];
 
-                //Debug.Log(hand.Rotation.z);
+            frame = controller.Frame();
 
-                car.transform.position = new Vector3((hand.Rotation.z * -2), car.transform.position.y, car.transform.position.z);
-
-            if ((hand.Rotation.z > ((float)1 / numberRoad) * 3) && (hand.Rotation.z < ((float)1 / numberRoad) * 4))
+            if(frame != null)
             {
+                try
+                {
+                    hand = frame.Hands[0];
+                    car.transform.position = new Vector3((hand.Rotation.z * -2), car.transform.position.y, car.transform.position.z);
+                }
+                catch
+                {
 
-                //Debug.Log(" road 4");
-
-                //s.setIntensity((float)1, GetType().Name);
-                //s.setFrequency(min_vib + ((max_vib - min_vib) / numberRoad) * 0, GetType().Name);
-
-
-
+                }
+                
             }
-            else if ((hand.Rotation.z > ((float)1 / numberRoad) * 2) && (hand.Rotation.z < ((float)1 / numberRoad) * 3))
-            {
-                //Debug.Log(" road 3");
-                //s.setIntensity((float)1, GetType().Name);
-            
-            }
-            else if ((hand.Rotation.z > ((float)1 / numberRoad) * 1) && (hand.Rotation.z < ((float)1 / numberRoad) * 2))
-            {
-                //Debug.Log(" road 2");
-                //s.setIntensity((float)1, GetType().Name);
-                //s.setFrequency(min_vib + ((max_vib - min_vib) / numberRoad) * 2, GetType().Name);
-               
-            }
-            else if ((hand.Rotation.z > 0) && (hand.Rotation.z < ((float)1 / numberRoad)))
-            {
-                //Debug.Log(" road 1");
-                //s.setIntensity((float)1, GetType().Name);
-                //s.setFrequency(min_vib + ((max_vib - min_vib) / numberRoad) * 3, GetType().Name);
-            }
-            else
-            {
-                //s.setFrequency((float)0, GetType().Name);
-                //s.setIntensity((float)0, GetType().Name);
-            }
-
-
-
-
         }
 
 

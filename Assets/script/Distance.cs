@@ -12,7 +12,7 @@ public class Distance : MonoBehaviour
 {
     Controller controller;
 
-    public enum Direction { Frequency, Intensity };
+    public enum Direction { Amplitude, Fréquence };
     [SerializeField]
     public Direction Mode;
 
@@ -36,7 +36,7 @@ public class Distance : MonoBehaviour
             Distance dis = (Distance)target;
             
             Direction list = dis.Mode;
-            if (list == Direction.Frequency ) DrawFreq(dis);
+            if (list == Direction.Fréquence ) DrawFreq(dis);
         }
 
         static void DrawFreq(Distance dis)
@@ -87,8 +87,10 @@ public class Distance : MonoBehaviour
 
 
         s = transform.parent.gameObject.GetComponent<sound>();
+        
         if (s == null)
         {
+            
             try
             {
                 s = GetComponent<sound>();
@@ -127,16 +129,14 @@ public class Distance : MonoBehaviour
         distance = Vector3.Distance(this.transform.position, interaction.transform.position);
 
 
-        s = GetComponent<sound>();
-
         // if the distance mode is activated 
 
-       
+        Debug.Log(s);
         if (s != null)
         {
-
             if (pointage == null)
             {
+                
                 vibrer();
             }
             else
@@ -156,7 +156,7 @@ public class Distance : MonoBehaviour
     {
 
         
-        if (Mode == Direction.Frequency) 
+        if (Mode == Direction.Fréquence) 
         {
 
             if (distance > 0.05)
@@ -169,7 +169,7 @@ public class Distance : MonoBehaviour
             
 
         }
-        else if (Mode == Direction.Intensity)
+        else if (Mode == Direction.Amplitude)
         {
             if (distance > 0.1)
             {

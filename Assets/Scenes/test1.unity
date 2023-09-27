@@ -257,7 +257,6 @@ GameObject:
   - component: {fileID: 63934608}
   - component: {fileID: 63934616}
   - component: {fileID: 63934607}
-  - component: {fileID: 63934614}
   - component: {fileID: 63934613}
   - component: {fileID: 63934611}
   - component: {fileID: 63934612}
@@ -369,7 +368,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 63934606}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ed8e4e552a0184a4ebaa3681376a1c83, type: 3}
   m_Name: 
@@ -474,21 +473,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &63934614
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 63934606}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 522d51d5353c5134cbfd282e78767525, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  amplitudebase: 1
-  frequencybase: 261.62
-  inverse: 0
 --- !u!95 &63934616
 Animator:
   serializedVersion: 3
@@ -523,7 +507,6 @@ GameObject:
   - component: {fileID: 86189993}
   - component: {fileID: 86189992}
   - component: {fileID: 86189997}
-  - component: {fileID: 86189998}
   m_Layer: 0
   m_Name: 1
   m_TagString: Untagged
@@ -642,7 +625,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 86189990}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ed8e4e552a0184a4ebaa3681376a1c83, type: 3}
   m_Name: 
@@ -651,21 +634,6 @@ MonoBehaviour:
   frequence_min: 100
   frequence_max: 400
   interaction: {fileID: 1721786710385090}
---- !u!114 &86189998
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 86189990}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 522d51d5353c5134cbfd282e78767525, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  amplitudebase: 1
-  frequencybase: 261.62
-  inverse: 0
 --- !u!1 &101480050
 GameObject:
   m_ObjectHideFlags: 0
@@ -1320,7 +1288,6 @@ GameObject:
   - component: {fileID: 374437383}
   - component: {fileID: 374437382}
   - component: {fileID: 374437387}
-  - component: {fileID: 374437388}
   m_Layer: 0
   m_Name: 4
   m_TagString: Untagged
@@ -1439,7 +1406,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 374437380}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ed8e4e552a0184a4ebaa3681376a1c83, type: 3}
   m_Name: 
@@ -1448,21 +1415,6 @@ MonoBehaviour:
   frequence_min: 100
   frequence_max: 400
   interaction: {fileID: 1721786710385090}
---- !u!114 &374437388
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 374437380}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 522d51d5353c5134cbfd282e78767525, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  amplitudebase: 1
-  frequencybase: 261.62
-  inverse: 0
 --- !u!1 &438839272
 GameObject:
   m_ObjectHideFlags: 0
@@ -1743,7 +1695,6 @@ GameObject:
   - component: {fileID: 586070758}
   - component: {fileID: 586070753}
   - component: {fileID: 586070752}
-  - component: {fileID: 586070755}
   - component: {fileID: 586070754}
   - component: {fileID: 586070751}
   - component: {fileID: 586070756}
@@ -1916,21 +1867,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &586070755
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 586070749}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 522d51d5353c5134cbfd282e78767525, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  amplitudebase: 1
-  frequencybase: 261.62
-  inverse: 0
 --- !u!114 &586070756
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1938,7 +1874,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 586070749}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ed8e4e552a0184a4ebaa3681376a1c83, type: 3}
   m_Name: 
@@ -2161,7 +2097,6 @@ GameObject:
   - component: {fileID: 753005065}
   - component: {fileID: 753005059}
   - component: {fileID: 753005058}
-  - component: {fileID: 753005062}
   - component: {fileID: 753005060}
   - component: {fileID: 753005061}
   - component: {fileID: 753005063}
@@ -2334,21 +2269,6 @@ MonoBehaviour:
   Mode: 0
   interaction: {fileID: 1721786710385090}
   distance_max: 0.05
---- !u!114 &753005062
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 753005056}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 522d51d5353c5134cbfd282e78767525, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  amplitudebase: 1
-  frequencybase: 261.62
-  inverse: 0
 --- !u!114 &753005063
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2356,7 +2276,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 753005056}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ed8e4e552a0184a4ebaa3681376a1c83, type: 3}
   m_Name: 
@@ -3195,6 +3115,7 @@ GameObject:
   - component: {fileID: 1001749919}
   - component: {fileID: 1001749920}
   - component: {fileID: 1001749921}
+  - component: {fileID: 1001749922}
   m_Layer: 0
   m_Name: tubes
   m_TagString: Untagged
@@ -3338,6 +3259,21 @@ MonoBehaviour:
   interaction: {fileID: 1721786710385090}
   frequency_: 0
   succecive: 1
+--- !u!114 &1001749922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1001749918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 522d51d5353c5134cbfd282e78767525, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amplitudebase: 1
+  frequencybase: 261.62
+  inverse: 0
 --- !u!1 &1029051678
 GameObject:
   m_ObjectHideFlags: 0
@@ -3410,6 +3346,7 @@ GameObject:
   - component: {fileID: 1055406988}
   - component: {fileID: 1055406987}
   - component: {fileID: 1055406989}
+  - component: {fileID: 1055406990}
   m_Layer: 0
   m_Name: Objects
   m_TagString: Untagged
@@ -3479,6 +3416,21 @@ MonoBehaviour:
   interaction: {fileID: 1721786710385090}
   frequency_: 0
   succecive: 1
+--- !u!114 &1055406990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1055406986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 522d51d5353c5134cbfd282e78767525, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amplitudebase: 1
+  frequencybase: 261.62
+  inverse: 0
 --- !u!1 &1078624514
 GameObject:
   m_ObjectHideFlags: 0
@@ -3736,7 +3688,6 @@ GameObject:
   - component: {fileID: 1208532452}
   - component: {fileID: 1208532451}
   - component: {fileID: 1208532456}
-  - component: {fileID: 1208532457}
   m_Layer: 0
   m_Name: 2
   m_TagString: Untagged
@@ -3855,7 +3806,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1208532449}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ed8e4e552a0184a4ebaa3681376a1c83, type: 3}
   m_Name: 
@@ -3864,21 +3815,6 @@ MonoBehaviour:
   frequence_min: 100
   frequence_max: 400
   interaction: {fileID: 1721786710385090}
---- !u!114 &1208532457
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1208532449}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 522d51d5353c5134cbfd282e78767525, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  amplitudebase: 1
-  frequencybase: 261.62
-  inverse: 0
 --- !u!1 &1233781145
 GameObject:
   m_ObjectHideFlags: 0
@@ -4746,7 +4682,6 @@ GameObject:
   - component: {fileID: 1491567983}
   - component: {fileID: 1491567977}
   - component: {fileID: 1491567976}
-  - component: {fileID: 1491567980}
   - component: {fileID: 1491567978}
   - component: {fileID: 1491567979}
   - component: {fileID: 1491567981}
@@ -4919,21 +4854,6 @@ MonoBehaviour:
   Mode: 0
   interaction: {fileID: 1721786710385090}
   distance_max: 0.05
---- !u!114 &1491567980
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1491567974}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 522d51d5353c5134cbfd282e78767525, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  amplitudebase: 1
-  frequencybase: 261.62
-  inverse: 0
 --- !u!114 &1491567981
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4941,7 +4861,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1491567974}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ed8e4e552a0184a4ebaa3681376a1c83, type: 3}
   m_Name: 
@@ -5200,7 +5120,6 @@ GameObject:
   - component: {fileID: 1534301930}
   - component: {fileID: 1534301933}
   - component: {fileID: 1534301929}
-  - component: {fileID: 1534301926}
   - component: {fileID: 1534301925}
   - component: {fileID: 1534301924}
   - component: {fileID: 1534301927}
@@ -5322,21 +5241,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &1534301926
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1534301923}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 522d51d5353c5134cbfd282e78767525, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  amplitudebase: 1
-  frequencybase: 261.62
-  inverse: 0
 --- !u!114 &1534301927
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5344,7 +5248,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1534301923}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ed8e4e552a0184a4ebaa3681376a1c83, type: 3}
   m_Name: 
@@ -5599,7 +5503,6 @@ GameObject:
   - component: {fileID: 1594488624}
   - component: {fileID: 1594488619}
   - component: {fileID: 1594488618}
-  - component: {fileID: 1594488621}
   - component: {fileID: 1594488620}
   - component: {fileID: 1594488617}
   - component: {fileID: 1594488622}
@@ -5772,21 +5675,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &1594488621
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1594488615}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 522d51d5353c5134cbfd282e78767525, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  amplitudebase: 1
-  frequencybase: 261.62
-  inverse: 0
 --- !u!114 &1594488622
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5794,7 +5682,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1594488615}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ed8e4e552a0184a4ebaa3681376a1c83, type: 3}
   m_Name: 
@@ -6891,7 +6779,6 @@ GameObject:
   - component: {fileID: 1943921280}
   - component: {fileID: 1943921274}
   - component: {fileID: 1943921273}
-  - component: {fileID: 1943921277}
   - component: {fileID: 1943921276}
   - component: {fileID: 1943921275}
   - component: {fileID: 1943921278}
@@ -7064,21 +6951,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &1943921277
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1943921271}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 522d51d5353c5134cbfd282e78767525, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  amplitudebase: 1
-  frequencybase: 261.62
-  inverse: 0
 --- !u!114 &1943921278
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7086,7 +6958,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1943921271}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ed8e4e552a0184a4ebaa3681376a1c83, type: 3}
   m_Name: 
@@ -7725,7 +7597,6 @@ GameObject:
   - component: {fileID: 2128212987}
   - component: {fileID: 2128212986}
   - component: {fileID: 2128212991}
-  - component: {fileID: 2128212992}
   m_Layer: 0
   m_Name: 3
   m_TagString: Untagged
@@ -7844,7 +7715,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2128212984}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ed8e4e552a0184a4ebaa3681376a1c83, type: 3}
   m_Name: 
@@ -7853,21 +7724,6 @@ MonoBehaviour:
   frequence_min: 100
   frequence_max: 400
   interaction: {fileID: 1721786710385090}
---- !u!114 &2128212992
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2128212984}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 522d51d5353c5134cbfd282e78767525, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  amplitudebase: 1
-  frequencybase: 261.62
-  inverse: 0
 --- !u!1 &2128721640
 GameObject:
   m_ObjectHideFlags: 0

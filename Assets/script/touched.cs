@@ -14,13 +14,15 @@ public class touched : MonoBehaviour
     Controller controller;
 
 
-    public enum Direction { Amplitude , Fréquence , Amplitude_Fréquence, Amplitude_Fréquence_continue, SoundOnEnterAndExit, SoundOnEnter, Audio, dominos_effect };
+    public enum Direction { Amplitude , Fréquence , Amplitude_Fréquence, Amplitude_Fréquence_continue, SoundOnEnterAndExit, SoundOnEnter, Audio};
     [SerializeField] public Direction Mode;
 
 
 
-    private AudioClip _clip1;
-    private AudioClip _clip2;
+    [HideInInspector]
+    public AudioClip _clip1;
+    [HideInInspector]
+    public AudioClip _clip2;
     private AudioSource _audio;
 
 
@@ -44,7 +46,7 @@ public class touched : MonoBehaviour
             
             Direction list = tou.Mode;
 
-            if (list == Direction.SoundOnEnter || list == Direction.SoundOnEnterAndExit || list == Direction.dominos_effect) DrawFreq(tou);
+            if (list == Direction.SoundOnEnter || list == Direction.SoundOnEnterAndExit) DrawFreq(tou);
 
             if (list == Direction.Audio) DrawAudio(tou);
 
@@ -129,16 +131,24 @@ public class touched : MonoBehaviour
             pointage = null;
         }
         controller = new Controller();
-        s = transform.parent.gameObject.GetComponent<sound>();
-        if (s == null)
+
+        try
         {
-            try
+            s = transform.parent.gameObject.GetComponent<sound>();
+        }
+        catch (Exception e)
+        {
+
+            if (s == null)
             {
-                s = GetComponent<sound>();
-            }
-            catch
-            {
-                Debug.Log("Sound dont't exist !");
+                try
+                {
+                    s = GetComponent<sound>();
+                }
+                catch
+                {
+                    Debug.Log("Sound dont't exist !");
+                }
             }
         }
 
@@ -149,7 +159,7 @@ public class touched : MonoBehaviour
         //    rb.useGravity = false;
         //}
         frequency_ = vib_min;
-        _audio = GetComponent<AudioSource>();
+        _audio = transform.parent.gameObject.GetComponent<AudioSource>();
         time_on = 0.2f;
         time_off = 0.2f;
     }
@@ -157,16 +167,13 @@ public class touched : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(pointage == null && Mode == Direction.dominos_effect)
-        {
-            Mode = Direction.Fréquence;
-            Debug.Log("Mode impossible");
-        }
-        Frame frame = controller.Frame();
+        
 
         // verify if there is no hands in the frame then set the frequency and intensity to 0
         if(controller.IsConnected == true)
         {
+            Frame frame = controller.Frame();
+
             if (frame.Hands.Count == 0)
             {
                 s.setFrequency((float)0, GetType().Name);
@@ -179,8 +186,6 @@ public class touched : MonoBehaviour
         distance = Vector3.Distance(this.transform.position, interaction.transform.position);
 
         
-        s = GetComponent<sound>();
-
         // if the distance mode is activated
         if (s != null)
         {
@@ -293,35 +298,6 @@ public class touched : MonoBehaviour
 
 
             }
-        }else if(Mode == Direction.dominos_effect)
-        {
-
-            time += Time.deltaTime;
-            Debug.Log(distance > distance_max);
-            if (distance > distance_max)
-            {
-                s.setIntensity((float)1, GetType().Name);
-            }
-            else
-            {
-
-                if ((frequency_ / 7) * (pointage.cube) <= (vib_max / 7) * pointage.cube)
-                {
-                    s.setFrequency(vib_min + (pointage.cube) * (200 / 7), GetType().Name);
-
-                    if (time >= 0.01)
-                    {
-                        frequency_ += (float)10;
-                        time = 0.0f;
-                    }
-                }
-                else
-                {
-                    pointage.cube += 1;
-                    s.setIntensity((float)0, GetType().Name);
-                    enter = false;
-                }
-            }
         }
         else if (enter)
         {
@@ -376,24 +352,24 @@ public class touched : MonoBehaviour
            
             s.enabled = false;
 
-            if (_audio == null)
-            {
-                Debug.LogError("Error");
-            }
-            else
-            {
-                _audio.clip = _clip1;
-            }
+            //if (_audio == null)
+            //{
+            //    Debug.LogError("Error");
+            //}
+            //else
+            //{
+            //    _audio.clip = _clip1;
+            //}
 
-            if (distance > distance_max)
-            {
-                
-            }
-            else {
+            //if (distance > distance_max)
+            //{
 
-                    
-                    _audio.Play();
-            }
+            //}
+            //else
+            //{
+
+            //    _audio.Play();
+            //}
         }
     }
 
@@ -414,6 +390,22 @@ public class touched : MonoBehaviour
             
                 
         }
+        Debug.Log("zzzz");
+        if (Mode == Direction.Audio)
+        {
+           
+            if (_audio == null)
+            {
+                Debug.LogError("Error");
+            }
+            else
+            {
+                
+                _audio.clip = _clip1;
+                _audio.Play();
+            }
+
+        }
     }
 
     void OnTriggerExit(Collider other)
@@ -430,5 +422,17 @@ public class touched : MonoBehaviour
 
             }
         }
+        //if (Mode == Direction.Audio)
+        //{
+        //    if (_audio == null)
+        //    {
+        //        Debug.LogError("Error");
+        //    }
+        //    else
+        //    {
+        //        _audio.clip = _clip2;
+        //        _audio.Play();
+        //    }
+        //}
     }
 }
