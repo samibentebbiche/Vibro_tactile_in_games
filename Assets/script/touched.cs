@@ -23,7 +23,7 @@ public class touched : MonoBehaviour
     public AudioClip _clip1;
     [HideInInspector]
     public AudioClip _clip2;
-    private AudioSource _audio;
+    //private AudioSource _audio;
 
 
     private float vib_min = 200;
@@ -78,8 +78,8 @@ public class touched : MonoBehaviour
             EditorGUILayout.LabelField("Clip 1 ", GUILayout.MaxWidth(35));
             tou._clip1 = EditorGUILayout.ObjectField(tou._clip1,typeof(AudioClip),true) as AudioClip;
 
-            EditorGUILayout.LabelField("Clip 2 ", GUILayout.MaxWidth(35));
-            tou._clip2 = EditorGUILayout.ObjectField(tou._clip2, typeof(AudioClip), true) as AudioClip;
+            //EditorGUILayout.LabelField("Clip 2 ", GUILayout.MaxWidth(35));
+            //tou._clip2 = EditorGUILayout.ObjectField(tou._clip2, typeof(AudioClip), true) as AudioClip;
 
             EditorGUILayout.EndHorizontal();
         }
@@ -153,13 +153,34 @@ public class touched : MonoBehaviour
         }
 
         if (s == null) s = gameObject.AddComponent<sound>();
-        //if (GetComponent<Rigidbody>() == null)
-        //{
-        //    rb = gameObject.AddComponent<Rigidbody>();
-        //    rb.useGravity = false;
-        //}
+        if (GetComponent<Rigidbody>() == null)
+        {
+            rb = gameObject.AddComponent<Rigidbody>();
+            rb.useGravity = false;
+        }
+
+        GetComponent<Collider>().isTrigger = true;
+
         frequency_ = vib_min;
-        _audio = transform.parent.gameObject.GetComponent<AudioSource>();
+
+        //if(transform.parent.gameObject.GetComponent<AudioSource>() == null)
+        //{
+            
+        //    if(GetComponent<AudioSource>() == null)
+        //    {
+
+        //        _audio = transform.parent.gameObject.AddComponent<AudioSource>();
+        //    }
+        //    else
+        //    {
+        //        _audio = GetComponent<AudioSource>();
+        //    }
+        //}
+        //else
+        //{
+        //    //_audio = transform.parent.gameObject.GetComponent<AudioSource>();
+        //}
+
         time_on = 0.2f;
         time_off = 0.2f;
     }
@@ -200,6 +221,7 @@ public class touched : MonoBehaviour
 
         if (Mode == Direction.Amplitude) // Changement d'amplitude
         {
+            s.enabled = true;
             if (distance > distance_max)
             {
                 
@@ -209,7 +231,7 @@ public class touched : MonoBehaviour
             }
             else
             {
-              
+                
                 time += Time.deltaTime;
                 s.setToFrequenceBase(GetType().Name);
                 if (time >= time_on)
@@ -217,6 +239,7 @@ public class touched : MonoBehaviour
                     s.setIntensity((float)0, GetType().Name);
                     if (time >= time_off + time_on)
                     {
+                        
                         s.setIntensity((float)1, GetType().Name);
                         time = 0.0f;
                     }
@@ -226,6 +249,7 @@ public class touched : MonoBehaviour
         else
         if (Mode == Direction.Amplitude_Fréquence) // Changement de l'amplitude et Fréquence
         {
+            s.enabled = true;
             if (distance > distance_max)
             {
                 
@@ -252,6 +276,7 @@ public class touched : MonoBehaviour
         else
         if (Mode == Direction.Amplitude_Fréquence_continue) // Changement d'amplitude et fréquence de manière continue
         {
+            s.enabled = true;
             if (distance > distance_max)
             {
                
@@ -268,6 +293,7 @@ public class touched : MonoBehaviour
         else
         if (Mode == Direction.Fréquence) // Changement de fréquence
         {
+            s.enabled = true;
             if (distance > distance_max)
             {
                 
@@ -301,6 +327,7 @@ public class touched : MonoBehaviour
         }
         else if (enter)
         {
+            s.enabled = true;
             time += Time.deltaTime;
             
             s.setIntensity((float)1, GetType().Name);
@@ -328,7 +355,7 @@ public class touched : MonoBehaviour
         }
         else if (exit)
         {
-            Debug.Log(this.name);
+            s.enabled = true;
             time += Time.deltaTime;
             s.setIntensity((float)1, GetType().Name);
             if (frequency_ > vib_min)
@@ -352,25 +379,26 @@ public class touched : MonoBehaviour
            
             s.enabled = false;
 
-            //if (_audio == null)
-            //{
-            //    Debug.LogError("Error");
-            //}
-            //else
-            //{
-            //    _audio.clip = _clip1;
-            //}
+            if (s.audio == null)
+            {
+                Debug.LogError("Error");
+            }
+            else
+            {
+                s.audio.clip = _clip1;
+            }
 
-            //if (distance > distance_max)
-            //{
+            if (distance > distance_max)
+            {
 
-            //}
-            //else
-            //{
+            }
+            else
+            {
 
-            //    _audio.Play();
-            //}
+                s.audio.Play();
+            }
         }
+
     }
 
     void OnTriggerEnter(Collider other)
@@ -378,8 +406,10 @@ public class touched : MonoBehaviour
 
         if (Mode == Direction.SoundOnEnterAndExit || Mode == Direction.SoundOnEnter)
         {
-            if(interaction.name == other.name )
+
+            if (interaction.name == other.name )
             {
+
                 exit = false;
                 if (!enter)
                 {
@@ -390,22 +420,7 @@ public class touched : MonoBehaviour
             
                 
         }
-        Debug.Log("zzzz");
-        if (Mode == Direction.Audio)
-        {
-           
-            if (_audio == null)
-            {
-                Debug.LogError("Error");
-            }
-            else
-            {
-                
-                _audio.clip = _clip1;
-                _audio.Play();
-            }
 
-        }
     }
 
     void OnTriggerExit(Collider other)
@@ -422,17 +437,6 @@ public class touched : MonoBehaviour
 
             }
         }
-        //if (Mode == Direction.Audio)
-        //{
-        //    if (_audio == null)
-        //    {
-        //        Debug.LogError("Error");
-        //    }
-        //    else
-        //    {
-        //        _audio.clip = _clip2;
-        //        _audio.Play();
-        //    }
-        //}
+
     }
 }

@@ -24,8 +24,8 @@ public class sound : MonoBehaviour
     DistanceSuivi disS;
     [SerializeField]
     private bool inverse = false;
-
-    AudioSource audio;
+    [HideInInspector]
+    public AudioSource audio;
 
     private float freq_min = 100;
     private float freq_max = 400;
@@ -96,11 +96,8 @@ public class sound : MonoBehaviour
 
     public void setFrequency(float fr, string className)
     {
-
         if (string.Equals(className, "touched") || string.Equals(className, "DominosEffect")) frequency_touched = fr;
         else if (string.Equals(className, "Distance") || string.Equals(className, "rotation")) frequency_distance = fr;
-        
-
 
     }
 
@@ -142,6 +139,7 @@ public class sound : MonoBehaviour
 
     public void setIntensity(float intensity, string className)
     {
+
         amplitude = intensity;
     }
 

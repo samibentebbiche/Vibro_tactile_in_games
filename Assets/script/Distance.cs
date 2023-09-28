@@ -102,6 +102,8 @@ public class Distance : MonoBehaviour
         }
         if (s == null) s = gameObject.AddComponent<sound>();
 
+        GetComponent<Collider>().isTrigger = true;
+
         if (GetComponent<Rigidbody>() == null)
         {
             rb = gameObject.AddComponent<Rigidbody>();
@@ -131,7 +133,6 @@ public class Distance : MonoBehaviour
 
         // if the distance mode is activated 
 
-        Debug.Log(s);
         if (s != null)
         {
             if (pointage == null)
