@@ -7164,6 +7164,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1354293075}
+  - component: {fileID: 1354293076}
   m_Layer: 0
   m_Name: Road
   m_TagString: Untagged
@@ -7189,6 +7190,28 @@ Transform:
   m_Father: {fileID: 66902622}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1354293076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1354293074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e48bafda98c25a42be28063136b583b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cube: 1
+  number_cube: 0
+  off: 0
+  interpolationPeriod: 5
+  toucher: 0
+  vib_min: 200
+  vib_max: 400
+  interaction: {fileID: 871650329838810789}
+  frequency_: 0
+  succecive: 1
 --- !u!1 &1369592379 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1257637052428748, guid: 72368278d054cda4bb18e5aa08ce971d,
