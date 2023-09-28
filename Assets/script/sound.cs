@@ -69,7 +69,7 @@ public class sound : MonoBehaviour
     private void OnAudioFilterRead(float[] data, int channels)
     {
 
-        //Debug.Log((frequency_touched + frequency_distance));
+        Debug.Log((frequency_touched + frequency_distance));
         double phaseIncrement = (frequency_touched + frequency_distance) / _sampleRate;
 
 
@@ -103,6 +103,8 @@ public class sound : MonoBehaviour
 
     public void setToFrequenceBase(string className)
     {
+
+
         if (string.Equals(className, "touched") || string.Equals(className, "DominosEffect")) frequency_touched = frequencybase;
         else if (string.Equals(className, "Distance")) frequency_distance = frequencybase;
     }

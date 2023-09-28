@@ -500,7 +500,6 @@ GameObject:
   - component: {fileID: 1878978302}
   - component: {fileID: 1878978301}
   - component: {fileID: 1878978300}
-  - component: {fileID: 1878978304}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -529,14 +528,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1878978298}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e95dc379060e41542b1c6344cf8ba926, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Mode: 1
+  Mode: 6
   _clip1: {fileID: 8300000, guid: c659047c833b5b643ad9de2cd54da53a, type: 3}
-  _clip2: {fileID: 0}
+  _clip2: {fileID: 8300000, guid: 3e380f9e196674a4d8d8b030591c7f63, type: 3}
   interaction: {fileID: 1633239215}
   distance_max: 1
 --- !u!65 &1878978301
@@ -599,19 +598,3 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1878978298}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1878978304
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1878978298}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed8e4e552a0184a4ebaa3681376a1c83, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Mode: 0
-  frequence_min: 100
-  frequence_max: 400
-  interaction: {fileID: 1633239215}

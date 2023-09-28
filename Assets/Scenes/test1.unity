@@ -352,9 +352,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 63934606}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1f63d6816cd72849a235e2799fdac01, type: 3}
+  m_Script: {fileID: 11500000, guid: e95dc379060e41542b1c6344cf8ba926, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Mode: 1
+  _clip1: {fileID: 0}
+  _clip2: {fileID: 0}
+  interaction: {fileID: 1721786710385090}
+  distance_max: 0
 --- !u!1 &86189990
 GameObject:
   m_ObjectHideFlags: 0
@@ -1525,9 +1530,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 586070749}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1f63d6816cd72849a235e2799fdac01, type: 3}
+  m_Script: {fileID: 11500000, guid: e95dc379060e41542b1c6344cf8ba926, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Mode: 1
+  _clip1: {fileID: 0}
+  _clip2: {fileID: 0}
+  interaction: {fileID: 1721786710385090}
+  distance_max: 0
 --- !u!65 &586070752
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1803,9 +1813,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 753005056}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1f63d6816cd72849a235e2799fdac01, type: 3}
+  m_Script: {fileID: 11500000, guid: e95dc379060e41542b1c6344cf8ba926, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Mode: 1
+  _clip1: {fileID: 0}
+  _clip2: {fileID: 0}
+  interaction: {fileID: 1721786710385090}
+  distance_max: 0
 --- !u!23 &753005065
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4045,9 +4060,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1491567974}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1f63d6816cd72849a235e2799fdac01, type: 3}
+  m_Script: {fileID: 11500000, guid: e95dc379060e41542b1c6344cf8ba926, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Mode: 1
+  _clip1: {fileID: 0}
+  _clip2: {fileID: 0}
+  interaction: {fileID: 1721786710385090}
+  distance_max: 0.03
 --- !u!23 &1491567983
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4314,9 +4334,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1534301923}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1f63d6816cd72849a235e2799fdac01, type: 3}
+  m_Script: {fileID: 11500000, guid: e95dc379060e41542b1c6344cf8ba926, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Mode: 1
+  _clip1: {fileID: 0}
+  _clip2: {fileID: 0}
+  interaction: {fileID: 1721786710385090}
+  distance_max: 0
 --- !u!65 &1534301929
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4579,9 +4604,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1594488615}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1f63d6816cd72849a235e2799fdac01, type: 3}
+  m_Script: {fileID: 11500000, guid: e95dc379060e41542b1c6344cf8ba926, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Mode: 1
+  _clip1: {fileID: 0}
+  _clip2: {fileID: 0}
+  interaction: {fileID: 1721786710385090}
+  distance_max: 0
 --- !u!65 &1594488618
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5731,9 +5761,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1943921271}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1f63d6816cd72849a235e2799fdac01, type: 3}
+  m_Script: {fileID: 11500000, guid: e95dc379060e41542b1c6344cf8ba926, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Mode: 1
+  _clip1: {fileID: 0}
+  _clip2: {fileID: 0}
+  interaction: {fileID: 1721786710385090}
+  distance_max: 0
 --- !u!23 &1943921280
 MeshRenderer:
   m_ObjectHideFlags: 0

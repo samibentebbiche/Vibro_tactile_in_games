@@ -78,8 +78,8 @@ public class touched : MonoBehaviour
             EditorGUILayout.LabelField("Clip 1 ", GUILayout.MaxWidth(35));
             tou._clip1 = EditorGUILayout.ObjectField(tou._clip1,typeof(AudioClip),true) as AudioClip;
 
-            //EditorGUILayout.LabelField("Clip 2 ", GUILayout.MaxWidth(35));
-            //tou._clip2 = EditorGUILayout.ObjectField(tou._clip2, typeof(AudioClip), true) as AudioClip;
+            EditorGUILayout.LabelField("Clip 2 ", GUILayout.MaxWidth(35));
+            tou._clip2 = EditorGUILayout.ObjectField(tou._clip2, typeof(AudioClip), true) as AudioClip;
 
             EditorGUILayout.EndHorizontal();
         }
@@ -374,30 +374,7 @@ public class touched : MonoBehaviour
                
             }
         }
-        else if(Mode == Direction.Audio)
-        {
-           
-            s.enabled = false;
 
-            if (s.audio == null)
-            {
-                Debug.LogError("Error");
-            }
-            else
-            {
-                s.audio.clip = _clip1;
-            }
-
-            if (distance > distance_max)
-            {
-
-            }
-            else
-            {
-
-                s.audio.Play();
-            }
-        }
 
     }
 
@@ -417,8 +394,27 @@ public class touched : MonoBehaviour
                     enter = true;
                 }
             }
-            
-                
+
+
+        }
+        else
+        {
+            if(Mode == Direction.Audio)
+            {
+                s.enabled = false;
+
+                if (s.audio == null)
+                {
+                    Debug.LogError("Error");
+                }
+                else
+                {
+                    s.audio.clip = _clip1;
+                }
+
+                s.audio.Play();
+
+            }
         }
 
     }
@@ -434,6 +430,24 @@ public class touched : MonoBehaviour
                 enter = false;
                 exit = true;
 
+            }
+        }
+        else
+        {
+            if (Mode == Direction.Audio)
+            {
+                s.enabled = false;
+
+                if (s.audio == null)
+                {
+                    Debug.LogError("Error");
+                }
+                else
+                {
+                    s.audio.clip = _clip2;
+                }
+
+                s.audio.Play();
 
             }
         }
