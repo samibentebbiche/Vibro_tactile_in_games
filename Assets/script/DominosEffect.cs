@@ -114,7 +114,7 @@ public class DominosEffect : MonoBehaviour
             time += Time.deltaTime;
             s.setIntensity((float)1, GetType().Name);
             
-            if (time < 0.4)
+            if (time < 0.3)
             {
 
                 Debug.Log(pointage.cube);

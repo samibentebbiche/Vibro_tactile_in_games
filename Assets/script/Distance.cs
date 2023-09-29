@@ -159,7 +159,7 @@ public class Distance : MonoBehaviour
         
         if (Mode == Direction.Fréquence) 
         {
-
+            s.enabled = true;
             if (distance > 0.05)
             {
                 
@@ -172,6 +172,7 @@ public class Distance : MonoBehaviour
         }
         else if (Mode == Direction.Amplitude)
         {
+            s.enabled = true;
             if (distance > 0.1)
             {
                 s.UpIntensity(distance, scale, GetType().Name);

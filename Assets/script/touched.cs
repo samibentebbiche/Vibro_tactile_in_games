@@ -25,7 +25,7 @@ public class touched : MonoBehaviour
     public AudioClip _clip2;
     //private AudioSource _audio;
 
-
+    private bool vib = false;
     private float vib_min = 200;
     private float vib_max = 400;
 
@@ -205,16 +205,9 @@ public class touched : MonoBehaviour
         if (Mode == Direction.Amplitude) // Changement d'amplitude
         {
             s.enabled = true;
-            if (distance > distance_max)
+            if (vib)
             {
-                
-                s.setFrequency((float)0, GetType().Name);
-                s.setIntensity((float)0, GetType().Name);
 
-            }
-            else
-            {
-                
                 time += Time.deltaTime;
                 s.setToFrequenceBase(GetType().Name);
                 if (time >= time_on)
@@ -233,15 +226,9 @@ public class touched : MonoBehaviour
         if (Mode == Direction.Amplitude_Fréquence) // Changement de l'amplitude et Fréquence
         {
             s.enabled = true;
-            if (distance > distance_max)
+            if (vib)
             {
-                
-                s.setIntensity((float)0, GetType().Name);
-                s.setFrequency((float)0, GetType().Name);
-            }
-            else
-            {
-                
+
                 time += Time.deltaTime;
                 if (time >= time_on)
                 {
@@ -260,14 +247,8 @@ public class touched : MonoBehaviour
         if (Mode == Direction.Amplitude_Fréquence_continue) // Changement d'amplitude et fréquence de manière continue
         {
             s.enabled = true;
-            if (distance > distance_max)
-            {
-               
-                s.setIntensity((float)0, GetType().Name);
-                s.setFrequency((float)0, GetType().Name);
-            }
-            else
-            {
+            if (vib)
+            { 
                 s.setToFrequenceBase(GetType().Name);
                 s.setIntensity((float)1, GetType().Name);
             }
@@ -363,7 +344,7 @@ public class touched : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-
+        vib = true;
         if (Mode == Direction.SoundOnEnterAndExit || Mode == Direction.SoundOnEnter)
         {
 
@@ -404,6 +385,7 @@ public class touched : MonoBehaviour
 
     void OnTriggerExit(Collider other)
     {
+        vib = false;
         if (Mode == Direction.SoundOnEnterAndExit)
         {
             if (interaction.name == other.name)
