@@ -163,23 +163,6 @@ public class touched : MonoBehaviour
 
         frequency_ = vib_min;
 
-        //if(transform.parent.gameObject.GetComponent<AudioSource>() == null)
-        //{
-            
-        //    if(GetComponent<AudioSource>() == null)
-        //    {
-
-        //        _audio = transform.parent.gameObject.AddComponent<AudioSource>();
-        //    }
-        //    else
-        //    {
-        //        _audio = GetComponent<AudioSource>();
-        //    }
-        //}
-        //else
-        //{
-        //    //_audio = transform.parent.gameObject.GetComponent<AudioSource>();
-        //}
 
         time_on = 0.2f;
         time_off = 0.2f;
