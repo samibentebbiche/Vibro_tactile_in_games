@@ -258,15 +258,8 @@ public class touched : MonoBehaviour
         if (Mode == Direction.Fréquence) // Changement de fréquence
         {
             s.enabled = true;
-            if (distance > distance_max)
+            if (vib)
             {
-                
-                s.setFrequency((float)0, GetType().Name);
-                
-
-            }
-            else
-            {     
                 s.setIntensity((float)1, GetType().Name);
                 time += Time.deltaTime;
                 
